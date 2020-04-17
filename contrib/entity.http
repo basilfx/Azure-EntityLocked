@@ -1,0 +1,11 @@
+### Get last identifier
+GET http://localhost:7071/runtime/webhooks/durabletask/entities/EntityState/global HTTP/1.1
+
+### Reset last identifier
+POST http://localhost:7071/runtime/webhooks/durabletask/entities/EntityState/global?op=Set HTTP/1.1
+Content-Type: application/json
+
+0
+
+### Delete the state
+POST http://localhost:7071/runtime/webhooks/durabletask/entities/EntityState/global?op=Delete HTTP/1.1
