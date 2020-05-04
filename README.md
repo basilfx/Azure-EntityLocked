@@ -32,6 +32,8 @@ As it turns out, this demonstrator is behaving just fine. It turned out that the
 
 The issue is under investigation, and more details can be found in [this issue](https://github.com/Azure/azure-functions-durable-extension/issues/1325).
 
+The easy fix was to change the orchestrator to a static function, so it is not dependent on any startup code.
+
 ## Reproduction steps
 * Start the function, locally.
 * Verify that it is running (it should log "Performing hard work")
