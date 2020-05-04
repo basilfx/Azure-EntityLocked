@@ -27,6 +27,11 @@ When this problem occours, messages similar to this are logged:
 Function 'TimerTrigger-Orchestrator (Orchestrator)' is waiting for input. Reason: WaitForLockAcquisitionCompleted
 ```
 
+## Problem solution
+As it turns out, this demonstrator is behaving just fine. It turned out that the actual issue in production code was related to exceptions being raised in the function startup code. As a consequence, the orchestrator did not even run, and was not updated.
+
+The issue is under investigation, and more details can be found in [this issue](https://github.com/Azure/azure-functions-durable-extension/issues/1325).
+
 ## Reproduction steps
 * Start the function, locally.
 * Verify that it is running (it should log "Performing hard work")
